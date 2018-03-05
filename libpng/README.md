@@ -16,3 +16,4 @@ gcc my-png-editor.c -lpng
 
 ## Пример
 В текущей директории содержится простой пример использования библиотеки libpng
+Пример работы с библиотекой: https://github.com/glennrp/libpng/blob/libpng16/example.c
