@@ -5,8 +5,9 @@
 void rmdigits(char *s){
 	for(int i=0; s[i];){
 		if(isdigit(s[i])){
-			for(int j=i; s[j]; j++)
-				s[j] = s[j+1]; 
+			memmove(&s[i], &s[i+1], strlen(&s[i]));
+//			for(int j=i; s[j]; j++)
+//				s[j] = s[j+1]; 
 		} else {
 			i++;
 		}
