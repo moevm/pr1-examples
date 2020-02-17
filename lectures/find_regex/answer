@@ -1,1 +1,4 @@
 find . -regextype posix-egrep -regex '\./test\.log\.[[:digit:]]{4}-[0-9]{2}-[0-9]{2}\.zip'
+find . -regextype egrep -regex '\./test\.log\.[[:digit:]]{5}\.zip'
+ls | grep -E "\.\w{3}$"
+
