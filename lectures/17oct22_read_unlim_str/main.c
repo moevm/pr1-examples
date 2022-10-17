@@ -41,13 +41,10 @@ int main(){
 	if(temp){ // temp != NULL
 		p = temp;
 	} else {
-		//???
+		// ???
 	}
 
-
-
 	free(p);
-	
 
 
 	return 0;
