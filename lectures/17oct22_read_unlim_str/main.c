@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int x;
 #define N 10
 
 int* initIntArray(int n){
@@ -42,13 +41,10 @@ int main(){
 	if(temp){ // temp != NULL
 		p = temp;
 	} else {
-		//???
+		// ???
 	}
 
-
-
 	free(p);
-	
 
 
 	return 0;
