@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int x;
 #define N 10
 
 int* initIntArray(int n){
