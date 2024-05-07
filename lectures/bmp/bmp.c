@@ -63,6 +63,13 @@ void swap(char *a, char *b){
 	*b = t;
 }
 
+unsigned int padding(unsigned int w){
+    return (4 - (w * sizeof(Rgb)) % 4) % 4;
+}
+
+unsigned int row_len(unsigned int w){
+    return w * sizeof(Rgb) + padding(w);
+}
 
 int main(){
 	FILE *f = fopen("simpsonsvr.bmp", "rb");
@@ -78,8 +85,8 @@ int main(){
 
 	Rgb **arr = malloc(H*sizeof(Rgb*));
 	for(int i=0; i<H; i++){
-		arr[i] = malloc(W * sizeof(Rgb) + (W*3)%4);
-		fread(arr[i],1,W * sizeof(Rgb) + (W*3)%4,f);
+		arr[i] = malloc(row_len(W));
+		fread(arr[i],1,row_len(W),f);
 	}
 		
 	for(int i=0; i<H; i++){
@@ -93,7 +100,7 @@ int main(){
 	bmif.width = W/2;
 	fwrite(&bmfh, 1, sizeof(BitmapFileHeader),ff);
 	fwrite(&bmif, 1, sizeof(BitmapInfoHeader),ff);
-	unsigned int w = (W/2) * sizeof(Rgb) + ((W/2)*3)%4;
+	unsigned int w = row_len(W / 2);
 	for(int i=0; i<H; i++){
 		fwrite(arr[i],1,w,ff);
 	}
