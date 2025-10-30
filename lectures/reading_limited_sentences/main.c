@@ -7,7 +7,7 @@
  * Далее программа должна отсортировать в алфавитном порядке без учета регистра каждое слово в строке и вывести на экран.
  */
 
-#define MAX_STR_SIZE 300
+#define MAX_STR_SIZE 1001
 #define DEFAULT_SIZE 5
 #define REALLOC_STEP DEFAULT_SIZE
 
